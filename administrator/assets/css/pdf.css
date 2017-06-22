@@ -1,0 +1,12 @@
+#cabecalho-pdf{
+    vertical-align: bottom; 
+    border-bottom: 1px solid black;
+}
+
+#cabecalho-pdf .titulo-cabecalho{
+    font-family: "Times New Roman", Times, Serif; 
+    color: #000000; 
+    font-weight: bold;
+    font-size: 20px;
+}
+    

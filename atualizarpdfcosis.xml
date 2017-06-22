@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+    <name>com_atualizarpdfcosis</name>
+    <creationDate>2016-06-08</creationDate>
+    <copyright>© 2016 Secretaria do Tesouro Nacional. Todos os direitos reservados.</copyright>
+    <license>GNU General Public License versão 2 ou posterior; consulte o arquivo License. txt</license>
+    <author>Clayton Alves Rodrigues</author>
+    <authorEmail>clayton.rodrigues@tesouro.gov.br</authorEmail>
+    <authorUrl>http://www.tesouro.gov.br</authorUrl>
+    <version>CVS: 1.0.0</version>
+    <description></description>
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <update> <!-- Runs on update -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/update.mysql.utf8.sql</file>
+        </sql>
+    </update>
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+    <media destination="com_atualizarpdfcosis" folder="media">
+        <folder>js</folder>
+        <folder>css</folder>
+    </media>
+    <administration>
+        <menu img="media/com_atualizarpdfcosis/images/s_com_atualizarpdfcosis.png" >COM_ATUALIZARPDFCOSIS</menu>
+        <submenu>
+            
+            <menu link="option=com_atualizarpdfcosis&amp;view=atualizarpdfs" view="atualizarpdfs" img="media/com_atualizarpdfcosis/images/s_atualizarpdfs.png" alt="Atualizarpdfcosis/Atualizarpdfs">COM_ATUALIZARPDFCOSIS_TITLE_ATUALIZARPDFS</menu>
+
+        </submenu>
+        <files folder="administrator">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+            <filename>atualizarpdfcosis.php</filename>
+            <folder>controllers</folder>
+            <folder>assets</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+        </files>
+        <languages folder="languages/administrator">
+            
+            <language tag="en-GB">en-GB/en-GB.com_atualizarpdfcosis.ini</language>
+            <language tag="en-GB">en-GB/en-GB.com_atualizarpdfcosis.sys.ini</language>
+            <language tag="pt-PT">pt-PT/pt-BR.com_atualizarpdfcosis.ini</language>
+            <language tag="pt-PT">pt-PT/pt-BR.com_atualizarpdfcosis.sys.ini</language>
+        </languages>
+    </administration>
+    <config>
+        <fields name="params">
+            <fieldset name="component">
+                <field name="save_history" default="0" />
+            </fieldset>
+        </fields>
+    </config>
+    <plugins>
+        <plugin group="search" plugin="atualizarpdfcosis"/>
+    </plugins>
+    
+</extension>
